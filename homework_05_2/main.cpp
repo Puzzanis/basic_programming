@@ -37,7 +37,7 @@ public:
 class Triangle: public Figure
 {
 public:
-	Triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, float set_corner_A, float set_corner_B, float set_corner_C)
+	Triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_corner_A, int set_corner_B, int set_corner_C)
 	{
 		name = "Треугольник";
 		side_length_a = set_side_length_a;
@@ -53,7 +53,7 @@ public:
 class Quadrangle: public Figure
 {
 public:
-	Quadrangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_side_length_d, float set_corner_A, float set_corner_B, float set_corner_C, float set_corner_D)
+	Quadrangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_side_length_d, int set_corner_A, int set_corner_B, int set_corner_C, int set_corner_D)
 	{
 		name = "Четырехугольник";
 		side_length_a = set_side_length_a;
@@ -72,7 +72,7 @@ public:
 class Right_angled_triangle : public Figure
 {
 public:
-	Right_angled_triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, float set_corner_A, float set_corner_B) 
+	Right_angled_triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_corner_A, int set_corner_B) 
 	{
 		name = "Прямоугольный треугольник";
 		side_length_a = set_side_length_a;
@@ -89,7 +89,7 @@ public:
 class Isosceles_triangle : public Figure
 {
 public:
-	Isosceles_triangle(int set_side_length_a, int set_side_length_b, float set_corner_A, float set_corner_B)
+	Isosceles_triangle(int set_side_length_a, int set_side_length_b, int set_corner_A, int set_corner_B)
 	{
 		name = "Равнобедренный треугольник";
 		side_length_a = set_side_length_a;
@@ -105,7 +105,7 @@ public:
 class Equilateral_triangle : public Figure
 {
 public:
-	Equilateral_triangle(int set_side_length_a, float set_corner_A)
+	Equilateral_triangle(int set_side_length_a, int set_corner_A)
 	{
 		name = "Равносторонний треугольник";
 		side_length_a = set_side_length_a;
@@ -155,7 +155,7 @@ public:
 class Parallelogram : public Figure
 {
 public:
-	Parallelogram(int set_side_length_a, int set_side_length_b, float set_corner_A, float set_corner_B) 
+	Parallelogram(int set_side_length_a, int set_side_length_b, int set_corner_A, int set_corner_B) 
 	{
 		name = "Параллелограмм";
 		side_length_a = set_side_length_a;
@@ -174,7 +174,7 @@ public:
 class Rhomb : public Figure
 {
 public:
-	Rhomb(int set_side_length_a, float set_corner_A, float set_corner_B) 
+	Rhomb(int set_side_length_a, int set_corner_A, int set_corner_B) 
 	{
 		name = "Ромб";
 		side_length_a = side_length_b = side_length_c = side_length_d = set_side_length_a;
