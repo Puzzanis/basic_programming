@@ -18,7 +18,6 @@ protected:
 	int corner_D{};
 
 	bool isQuadrangle{ false }; //признак четырехугольника
-//	bool is_right_figure{ false }; // флаг правильной фигуры
 
 	virtual bool check_geometr_figure() // функция проверки правильности геометрической фигуры
 	{
