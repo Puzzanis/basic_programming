@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-*.cpp*	working-tree-encoding=cp1251	eol=crlf
+#*.cpp*	working-tree-encoding=utf8	eol=crlf
