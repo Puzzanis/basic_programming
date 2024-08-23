@@ -16,7 +16,7 @@ protected:
 	int corner_C{};
 	int corner_D{};
 
-	bool isQuadrangle{ false }; //РїСЂРёР·РЅР°Рє С‡РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРєР°
+	bool isQuadrangle{ false }; //признак четырехугольника
 
 public:
 	std::string getName() { return name; }
@@ -33,13 +33,13 @@ public:
 
 };
 
-// РўСЂРµСѓРіРѕР»СЊРЅРёРє
+// Треугольник
 class Triangle: public Figure
 {
 public:
 	Triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_corner_A, int set_corner_B, int set_corner_C)
 	{
-		name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
+		name = "Треугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_c;
@@ -49,13 +49,13 @@ public:
 		
 	}
 };
-// Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє - Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ
+// Четырехугольник - базовый класс
 class Quadrangle: public Figure
 {
 public:
 	Quadrangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_side_length_d, int set_corner_A, int set_corner_B, int set_corner_C, int set_corner_D)
 	{
-		name = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє";
+		name = "Четырехугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_c;
@@ -68,13 +68,13 @@ public:
 	}
 };
 
-// РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+// Прямоугольный треугольник
 class Right_angled_triangle : public Figure
 {
 public:
 	Right_angled_triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_corner_A, int set_corner_B) 
 	{
-		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
+		name = "Прямоугольный треугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_c;
@@ -85,13 +85,13 @@ public:
 	}
 };
 
-// Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+// Равнобедренный треугольник
 class Isosceles_triangle : public Figure
 {
 public:
 	Isosceles_triangle(int set_side_length_a, int set_side_length_b, int set_corner_A, int set_corner_B)
 	{
-		name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
+		name = "Равнобедренный треугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_a;
@@ -101,13 +101,13 @@ public:
 		corner_C = set_corner_A;
 	}
 };
-// Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+// Равносторонний треугольник
 class Equilateral_triangle : public Figure
 {
 public:
 	Equilateral_triangle(int set_side_length_a, int set_corner_A)
 	{
-		name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
+		name = "Равносторонний треугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_a;
 		side_length_c = set_side_length_a;
@@ -117,13 +117,13 @@ public:
 		corner_C = set_corner_A;
 	}
 };
-// РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє 
+// Прямоугольник 
 class Rectangle : public Figure
 {
 public:
 	Rectangle(int set_side_length_a, int set_side_length_b)
 	{
-		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє";
+		name = "Прямоугольник";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_a;
@@ -135,13 +135,13 @@ public:
 	}
 };
 
-// РљРІР°РґСЂР°С‚  
+// Квадрат  
 class Square : public Figure
 {
 public:
 	Square(int set_side_length_a)
 	{
-		name = "РљРІР°РґСЂР°С‚";
+		name = "Квадрат";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_a;
 		side_length_c = set_side_length_a;
@@ -151,13 +151,13 @@ public:
 		corner_A = corner_B = corner_C = corner_D = 90;
 	}
 };
-// РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј  
+// Параллелограмм  
 class Parallelogram : public Figure
 {
 public:
 	Parallelogram(int set_side_length_a, int set_side_length_b, int set_corner_A, int set_corner_B) 
 	{
-		name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј";
+		name = "Параллелограмм";
 		side_length_a = set_side_length_a;
 		side_length_b = set_side_length_b;
 		side_length_c = set_side_length_a;
@@ -170,13 +170,13 @@ public:
 		corner_D = set_corner_B;
 	}
 };
-// Р РѕРјР±  
+// Ромб  
 class Rhomb : public Figure
 {
 public:
 	Rhomb(int set_side_length_a, int set_corner_A, int set_corner_B) 
 	{
-		name = "Р РѕРјР±";
+		name = "Ромб";
 		side_length_a = side_length_b = side_length_c = side_length_d = set_side_length_a;
 		isQuadrangle = true;
 		corner_A = set_corner_A;
@@ -189,7 +189,7 @@ public:
 void print(Figure& fig)
 {
 	std::cout << fig.getName() << ':' << '\n';
-	std::cout << "РЎС‚РѕСЂРѕРЅС‹: " << "a=" << fig.get_side_length_a() << " b=" << fig.get_side_length_b() << " c=" << fig.get_side_length_c();
+	std::cout << "Стороны: " << "a=" << fig.get_side_length_a() << " b=" << fig.get_side_length_b() << " c=" << fig.get_side_length_c();
 	if (fig.get_isQuadrangle())
 	{
 		std::cout << " d=" << fig.get_side_length_d() << '\n';
@@ -199,7 +199,7 @@ void print(Figure& fig)
 		std::cout << '\n';
 	}
 
-	std::cout << "РЈРіР»С‹: " << "A=" << fig.get_corner_A() << " B=" << fig.get_corner_B() << " C=" << fig.get_corner_C();
+	std::cout << "Углы: " << "A=" << fig.get_corner_A() << " B=" << fig.get_corner_B() << " C=" << fig.get_corner_C();
 	if (fig.get_isQuadrangle())
 	{
 		std::cout << " d=" << fig.get_corner_D() << '\n';
@@ -215,31 +215,31 @@ int main()
 {
 	setlocale(LC_ALL, "rus");  //setting the language standard
 
-	// РўСЂРµСѓРіРѕР»СЊРЅРёРє
+	// Треугольник
 	Triangle triangle{ 10, 20, 30, 50, 60, 70 };
 	print(triangle);
-	// РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+	// Прямоугольный треугольник
 	Right_angled_triangle r{10, 20, 30, 50, 50};
 	print(r);
-	// Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+	// Равнобедренный треугольник
 	Isosceles_triangle i{ 10, 20, 50, 60 };
 	print(i);
-	// Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
+	// Равносторонний треугольник
 	Equilateral_triangle e{ 20, 60 };
 	print(e);
-	// Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє
+	// Четырехугольник
 	Quadrangle q{ 10, 20, 30, 40, 50, 60, 70, 80 };
 	print(q);
-	// РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє
+	// Прямоугольник
 	Rectangle re{ 10, 20 };
 	print(re);
-	// РљРІР°РґСЂР°С‚
+	// Квадрат
 	Square s{ 50 };
 	print(s);
-	// РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј
+	// Параллелограмм
 	Parallelogram p{ 50, 90, 30, 60 };
 	print(p);
-	// Р РѕРјР±
+	// Ромб
 	Rhomb rhomb{ 50, 30, 60 };
 	print(rhomb);
 

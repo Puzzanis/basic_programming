@@ -4,7 +4,7 @@
 class Figure
 {
 protected:
-    std::string name{ "Р¤РёРіСѓСЂР°" };
+    std::string name{ "Фигура" };
     int sides_count{};
 
 public:
@@ -18,7 +18,7 @@ class Triangle : public Figure
 public:
     Triangle()
     {
-        name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
+        name = "Треугольник";
         sides_count = 3;
     }
 };
@@ -28,7 +28,7 @@ class Quadrangle : public Figure
 public:
     Quadrangle()
     {
-        name = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє";
+        name = "Четырехугольник";
         sides_count = 4;
     }
 };
@@ -44,7 +44,7 @@ int main()
     Figure f{};
     Triangle t{};
     Quadrangle q{};
-    std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕСЂРѕРЅ: \n";
+    std::cout << "Количество стророн: \n";
     print(f);
     print(t);
     print(q);
