@@ -1,6 +1,6 @@
-#include "Shape.h"
+п»ї#include "Shape.h"
 
-bool Shape::check_geometr_figure() // функция проверки правильности геометрической фигуры
+bool Shape::check_geometr_figure() // С„СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕР№ С„РёРіСѓСЂС‹
 {
 	if (sides_count == 0)
 	{
