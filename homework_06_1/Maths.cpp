@@ -1,4 +1,4 @@
-//the addition function
+﻿//the addition function
 int sum(int a, int b) { return a + b; }
 //the subtraction function
 int diff(int a, int b) { return a - b; }

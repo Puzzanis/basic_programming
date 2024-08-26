@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="homework_06_1.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maths.cpp" />
     <ClCompile Include="Print.cpp" />
   </ItemGroup>

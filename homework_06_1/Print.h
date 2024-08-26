@@ -1,6 +1,6 @@
-#ifndef PRINT_H
+п»ї#ifndef PRINT_H
 #define PRINT_H
 
-void print(int num_func, int first_number, int second_number);  //функция печати результата математических функций
+void print(int num_func, int first_number, int second_number);  //С„СѓРЅРєС†РёСЏ РїРµС‡Р°С‚Рё СЂРµР·СѓР»СЊС‚Р°С‚Р° РјР°С‚РµРјР°С‚РёС‡РµСЃРєРёС… С„СѓРЅРєС†РёР№
 
 #endif

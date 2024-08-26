@@ -1,4 +1,4 @@
-#ifndef MATHS_H
+﻿#ifndef MATHS_H
 #define MATHS_H
 
 int sum(int a, int b);              //definition of the addition function

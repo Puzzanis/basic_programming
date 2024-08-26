@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "Maths.h"
 
 void print(int num_func, int first_number, int second_number)
@@ -6,22 +6,22 @@ void print(int num_func, int first_number, int second_number)
 	switch (num_func)
 	{
 	case 1:
-		std::cout << first_number << " ïëþñ " << second_number << " = " << sum(first_number, second_number) << std::endl;
+		std::cout << first_number << " Ð¿Ð»ÑŽÑ " << second_number << " = " << sum(first_number, second_number) << std::endl;
 		break;
 	case 2:
-		std::cout << first_number << " ìèíóñ " << second_number << " = " << diff(first_number, second_number) << std::endl;
+		std::cout << first_number << " Ð¼Ð¸Ð½ÑƒÑ " << second_number << " = " << diff(first_number, second_number) << std::endl;
 		break;
 	case 3:
-		std::cout << first_number << " óìíîæèòü " << second_number << " = " << multiplication(first_number, second_number) << std::endl;
+		std::cout << first_number << " ÑƒÐ¼Ð½Ð¾Ð¶Ð¸Ñ‚ÑŒ " << second_number << " = " << multiplication(first_number, second_number) << std::endl;
 		break;
 	case 4:
-		std::cout << first_number << " ðàçäåëèòü " << second_number << " = " << division(first_number, second_number) << std::endl;
+		std::cout << first_number << " Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÑŒ " << second_number << " = " << division(first_number, second_number) << std::endl;
 		break;
 	case 5:
-		std::cout << first_number << " â ñòåïåíè " << second_number << " = " << pow(first_number, second_number) << std::endl;
+		std::cout << first_number << " Ð² ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ " << second_number << " = " << pow(first_number, second_number) << std::endl;
 		break;
 	default:
-		std::cout << "Ââåäåí íåêîððåêòíûé íîìåð îïåðàöèè" << std::endl;
+		std::cout << "Ð’Ð²ÐµÐ´ÐµÐ½ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸" << std::endl;
 		break;
 	}
 }
