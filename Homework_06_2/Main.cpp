@@ -4,6 +4,8 @@
 
 
 int main() {
+    setlocale(LC_ALL, "rus");  //setting the language standard
+
     Counter count{};
 
     std::string response;
@@ -38,5 +40,7 @@ int main() {
             std::cout << "Неверная команда" << std::endl;
         }
     }
-    std::cout << "До свидания!" << std::endl;;
+    std::cout << "До свидания!" << std::endl;
+
+    return EXIT_SUCCESS;
 }
