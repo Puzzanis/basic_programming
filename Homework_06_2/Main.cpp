@@ -1,4 +1,4 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <string>
 #include "Counter.h"
 
@@ -9,12 +9,12 @@ int main() {
     Counter count{};
 
     std::string response;
-    std::cout << "¬˚ ıÓÚËÚÂ ÛÍ‡Á‡Ú¸ Ì‡˜‡Î¸ÌÓÂ ÁÌ‡˜ÂÌËÂ Ò˜∏Ú˜ËÍ‡? ¬‚Â‰ËÚÂ ‰‡ ËÎË ÌÂÚ: ";
+    std::cout << "–í—ã —Ö–æ—Ç–∏—Ç–µ —É–∫–∞–∑–∞—Ç—å –Ω–∞—á–∞–ª—å–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Å—á—ë—Ç—á–∏–∫–∞? –í–≤–µ–¥–∏—Ç–µ –¥–∞ –∏–ª–∏ –Ω–µ—Ç: ";
     std::cin >> response;
-    if (response == "‰‡")
+    if (response == "–¥–∞")
     {
         int value;
-        std::cout << "¬‚Â‰ËÚÂ Ì‡˜‡Î¸ÌÓÂ ÁÌ‡˜ÂÌËÂ Ò˜∏Ú˜ËÍ‡: ";
+        std::cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞—á–∞–ª—å–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Å—á—ë—Ç—á–∏–∫–∞: ";
         std::cin >> value;
         count.setCount(value);
     }
@@ -22,7 +22,7 @@ int main() {
     for (;;)
     {
         char operation;
-        std::cout << "¬‚Â‰ËÚÂ ÍÓÏ‡Ì‰Û ('+', '-', '=' ËÎË 'x'): ";
+        std::cout << "–í–≤–µ–¥–∏—Ç–µ –∫–æ–º–∞–Ω–¥—É ('+', '-', '=' –∏–ª–∏ 'x'): ";
         std::cin >> operation;
         if (operation == 'x') break;
         switch (operation)
@@ -37,10 +37,10 @@ int main() {
             std::cout << count.getCount() << std::endl;
             break;
         default:
-            std::cout << "ÕÂ‚ÂÌ‡ˇ ÍÓÏ‡Ì‰‡" << std::endl;
+            std::cout << "–ù–µ–≤–µ—Ä–Ω–∞—è –∫–æ–º–∞–Ω–¥–∞" << std::endl;
         }
     }
-    std::cout << "ƒÓ Ò‚Ë‰‡ÌËˇ!" << std::endl;
+    std::cout << "–î–æ —Å–≤–∏–¥–∞–Ω–∏—è!" << std::endl;
 
     return EXIT_SUCCESS;
 }
