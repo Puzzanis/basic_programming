@@ -1,6 +1,6 @@
-#include "Triangle.h"
+п»ї#include "Triangle.h"
 
-bool Triangle::check_geometr_figure()// функция проверки правильности геометрической фигуры
+bool Triangle::check_geometr_figure()// С„СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕР№ С„РёРіСѓСЂС‹
 {
 	if (sides_count == 3 and corner_A + corner_B + corner_C == 180)
 	{
@@ -14,7 +14,7 @@ bool Triangle::check_geometr_figure()// функция проверки правильности геометриче
 
 Triangle::Triangle(int set_side_length_a, int set_side_length_b, int set_side_length_c, int set_corner_A, int set_corner_B, int set_corner_C)
 {
-	name = "Треугольник";
+	name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 	sides_count = 3;
 	side_length_a = set_side_length_a;
 	side_length_b = set_side_length_b;
