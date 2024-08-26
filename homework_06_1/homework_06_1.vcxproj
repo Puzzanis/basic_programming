@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClCompile Include="homework_06_1.cpp" />
     <ClCompile Include="Maths.cpp" />
+    <ClCompile Include="Print.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Print.h" />
     <ClInclude Include="Maths.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
