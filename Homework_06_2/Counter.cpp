@@ -1,4 +1,4 @@
-#include "Counter.h"
+﻿#include "Counter.h"
 
 Counter::Counter(int setCount) : count{ setCount } {}
 
