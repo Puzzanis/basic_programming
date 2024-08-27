@@ -10,7 +10,7 @@ int main()
 	setlocale(LC_ALL, "rus");  //setting the language standard
 
 #ifndef MODE
-	#error djglkjf
+	#error !!!The MODE variable must be defined
 #endif // !MODE
 
 #if MODE == 1
