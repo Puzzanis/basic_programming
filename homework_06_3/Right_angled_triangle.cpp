@@ -1,14 +1,17 @@
 ﻿#include "Right_angled_triangle.h"
+#include "Error_define.h"
 
 // Прямоугольный треугольник
-bool Right_angled_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Right_angled_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 3 && corner_C == 90)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_C != 90) {
+			throw Error("Ошибка создания фигуры. Причина: Угл \"C\" не равен 90\n");
+		}
 	}
 }
 

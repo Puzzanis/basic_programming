@@ -17,6 +17,7 @@ int main()
 	setlocale(LC_ALL, "rus");  //setting the language standard
 	Shape Shape{};
 	print(Shape);
+
 	// Треугольник
 	Triangle triangle{ 10, 20, 30, 50, 60, 70 };
 	print(triangle);
@@ -40,7 +41,7 @@ int main()
 	print(s);
 	// Параллелограмм
 	Parallelogram p{ 50, 90, 50, 90, 30, 60, 30, 60 };
-	print(p);
+	print(p);	
 	// Ромб
 	Rhomb rhomb{ 10, 10, 10, 10, 30, 60, 30, 60 };
 	print(rhomb);

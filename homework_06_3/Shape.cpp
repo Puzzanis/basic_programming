@@ -1,13 +1,14 @@
 ﻿#include "Shape.h"
+#include "Error_define.h"
 
-bool Shape::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Shape::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 0)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		throw Error("Ошибка создания фигуры. Причина: Количество сторон не равно 0\n");
 	}
 }
 
@@ -24,4 +25,9 @@ int Shape::get_corner_D() { return corner_D; }
 
 int Shape::getSides_count() { return sides_count; }
 bool Shape::get_isQuadrangle() { return isQuadrangle; }
-bool Shape::get_is_right_figure() { return check_geometr_figure(); }
+bool Shape::get_printing_is_allowed() { return printing_is_allowed; }
+
+bool Shape::get_is_right_figure() { 
+	try { check_geometr_figure(); return printing_is_allowed; }
+	catch (const Error& exception) { std::cout << exception.what() << std::endl; printing_is_allowed = false;}
+}

@@ -1,14 +1,19 @@
 #include "Isosceles_triangle.h"
+#include "Error_define.h"
 
-
-bool Isosceles_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Isosceles_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 3 && corner_A == corner_C && side_length_a == side_length_c)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_A != corner_C) {
+			throw Error("Ошибка создания фигуры. Причина: углы А и С не равны\n");
+		}
+		if (side_length_a != side_length_c) {
+			throw Error("Ошибка создания фигуры. Причина: стороны \"a\" и \"c\" не равны друг другу\n");
+		}
 	}
 }
 

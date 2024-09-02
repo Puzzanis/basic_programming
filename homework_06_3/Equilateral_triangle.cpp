@@ -1,14 +1,20 @@
 ﻿#include "Equilateral_triangle.h"
+#include "Error_define.h"
 
 // Равносторонний треугольник
-bool Equilateral_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Equilateral_triangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 3 && corner_A == 60 && corner_B == 60 && corner_C == 60 && side_length_a == side_length_b && side_length_b == side_length_c)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_A != 60 || corner_B != 60 || corner_C != 60) {
+			throw Error("Ошибка создания фигуры. Причина: углы не равны 60\n");
+		}
+		if (side_length_a != side_length_b || side_length_b != side_length_c ) {
+			throw Error("Ошибка создания фигуры. Причина: стороны не равны друг другу\n");
+		}
 	}
 }
 

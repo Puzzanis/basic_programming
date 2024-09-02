@@ -1,13 +1,16 @@
 ﻿#include "Triangle.h"
+#include "Error_define.h"
 
-bool Triangle::check_geometr_figure()// функция проверки правильности геометрической фигуры
+void Triangle::check_geometr_figure()// функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 3 and corner_A + corner_B + corner_C == 180)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_A + corner_B + corner_C != 180) {
+			throw Error("Ошибка создания фигуры. Причина: сумма углов не равна 180\n");
+		}
 	}
 }
 

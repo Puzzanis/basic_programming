@@ -1,14 +1,25 @@
 #include "Parallelogram.h"
+#include "Error_define.h"
 
-
-bool Parallelogram::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Parallelogram::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 4 && corner_A == corner_C && corner_B == corner_D && side_length_a == side_length_c && side_length_b == side_length_d)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_A != corner_C) {
+			throw Error("Ошибка создания фигуры. Причина: углы А и С не равны\n");
+		}
+		if (corner_B != corner_D) {
+			throw Error("Ошибка создания фигуры. Причина: углы B и D не равны\n");
+		}
+		if (side_length_a != side_length_c) {
+			throw Error("Ошибка создания фигуры. Причина: стороны \"a\" и \"c\" не равны друг другу\n");
+		}
+		if (side_length_b != side_length_d) {
+			throw Error("Ошибка создания фигуры. Причина: стороны \"b\" и \"d\" не равны друг другу\n");
+		}
 	}
 }
 

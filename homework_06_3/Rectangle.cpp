@@ -1,13 +1,30 @@
 ﻿#include "Rectangle.h"
+#include "Error_define.h"
 
-bool Rectangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
+void Rectangle::check_geometr_figure() // функция проверки правильности геометрической фигуры
 {
 	if (sides_count == 4 && corner_A == 90 && corner_B == 90 && corner_C == 90 && corner_D == 90 && side_length_a == side_length_c && side_length_b == side_length_d)
 	{
-		return true;
+		printing_is_allowed = true;
 	}
 	else {
-		return false;
+		if (corner_A != 90) {
+			throw Error("Ошибка создания фигуры. Причина: Угл \"A\" не равен 90\n");
+		}
+		if (corner_B != 90) {
+			throw Error("Ошибка создания фигуры. Причина: Угл \"B\" не равен 90\n");
+		}
+		if (corner_C != 90) {
+			throw Error("Ошибка создания фигуры. Причина: Угл \"C\" не равен 90\n");
+		}
+		if (corner_D != 90) {
+			throw Error("Ошибка создания фигуры. Причина: Угл \"D\" не равен 90\n");
+		}
+		if (side_length_b != side_length_d) {
+			throw Error("Ошибка создания фигуры. Причина: Стороны \"b\" и \"d\" не равены\n");
+		}if (side_length_a != side_length_c) {
+			throw Error("Ошибка создания фигуры. Причина: Стороны \"а\" и \"c\" не равены\n");
+		}
 	}
 }
 

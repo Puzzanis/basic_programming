@@ -20,8 +20,9 @@ protected:
 	int corner_D{};
 
 	bool isQuadrangle{ false }; //признак четырехугольника
+	bool printing_is_allowed{ false }; //печать разрешена
 
-	virtual bool check_geometr_figure(); // функция проверки правильности геометрической фигуры
+	virtual void check_geometr_figure(); // функция проверки правильности геометрической фигуры
 
 public:
 	std::string getName();
@@ -38,8 +39,7 @@ public:
 	int getSides_count();
 	bool get_isQuadrangle();
 	bool get_is_right_figure();
-
-
+	bool get_printing_is_allowed();
 };
 
 #endif
