@@ -11,8 +11,6 @@ endif()
 
 project ("homework_10_2")
 
-#add_subdirectory(Classes)
-
 set(SOURCES
 	Main.cpp
 	Classes/Equilateral_triangle/Equilateral_triangle.cpp
