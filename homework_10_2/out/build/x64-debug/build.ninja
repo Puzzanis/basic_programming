@@ -49,7 +49,7 @@ cmake_ninja_workdir = E$:\C++\Visio\HomeWork\homework_10_2\out\build\x64-debug\
 
 build cmake_object_order_depends_target_homework_10_2: phony || .
 
-build CMakeFiles\homework_10_2.dir\homework_10_2.cpp.obj: CXX_COMPILER__homework_10_2_unscanned_Debug E$:\C++\Visio\HomeWork\homework_10_2\homework_10_2.cpp || cmake_object_order_depends_target_homework_10_2
+build CMakeFiles\homework_10_2.dir\Main.cpp.obj: CXX_COMPILER__homework_10_2_unscanned_Debug E$:\C++\Visio\HomeWork\homework_10_2\Main.cpp || cmake_object_order_depends_target_homework_10_2
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
   OBJECT_DIR = CMakeFiles\homework_10_2.dir
   OBJECT_FILE_DIR = CMakeFiles\homework_10_2.dir
@@ -148,7 +148,7 @@ build CMakeFiles\homework_10_2.dir\Classes\Triangle\Triangle.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable homework_10_2.exe
 
-build homework_10_2.exe: CXX_EXECUTABLE_LINKER__homework_10_2_Debug CMakeFiles\homework_10_2.dir\homework_10_2.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Equilateral_triangle\Equilateral_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Shape\Shape.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Error\Error.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Isosceles_triangle\Isosceles_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Parallelogram\Parallelogram.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Print\Print.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Quadrangle\Quadrangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Rectangle\Rectangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Rhomb\Rhomb.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Right_angled_triangle\Right_angled_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Square\Square.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Triangle\Triangle.cpp.obj
+build homework_10_2.exe: CXX_EXECUTABLE_LINKER__homework_10_2_Debug CMakeFiles\homework_10_2.dir\Main.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Equilateral_triangle\Equilateral_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Shape\Shape.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Error\Error.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Isosceles_triangle\Isosceles_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Parallelogram\Parallelogram.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Print\Print.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Quadrangle\Quadrangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Rectangle\Rectangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Rhomb\Rhomb.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Right_angled_triangle\Right_angled_triangle.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Square\Square.cpp.obj CMakeFiles\homework_10_2.dir\Classes\Triangle\Triangle.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

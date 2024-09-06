@@ -45,6 +45,6 @@ int main()
 	// Ромб
 	Rhomb rhomb{ 10, 10, 10, 10, 30, 60, 30, 60 };
 	print(rhomb);
-
+	system("pause");
 	return EXIT_SUCCESS;
 }
