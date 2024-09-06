@@ -1,3 +1,0 @@
-E:/C++/Visio/HomeWork/homework_10_1/out/build/x64-debug/CMakeFiles/homework_10_1.dir
-E:/C++/Visio/HomeWork/homework_10_1/out/build/x64-debug/CMakeFiles/edit_cache.dir
-E:/C++/Visio/HomeWork/homework_10_1/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
