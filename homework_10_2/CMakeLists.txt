@@ -43,8 +43,8 @@ set (HEADERS
 	Classes/Triangle/Triangle.h
 )
 
+
 # Добавьте источник в исполняемый файл этого проекта.
-# add_executable (homework_10_2 "homework_10_2.cpp"  "Classes/Equilateral_triangle/Equilateral_triangle.cpp" "Classes/Shape/Shape.h" "Classes/Shape/Shape.cpp" "Classes/Error/Error.h" "Classes/Error/Error.cpp" "Classes/Isosceles_triangle/Isosceles_triangle.h" "Classes/Isosceles_triangle/Isosceles_triangle.cpp" "Classes/Parallelogram/Parallelogram.h" "Classes/Parallelogram/Parallelogram.cpp" "Classes/Print/Print.h" "Classes/Print/Print.cpp" "Classes/Quadrangle/Quadrangle.h" "Classes/Quadrangle/Quadrangle.cpp" "Classes/Rectangle/Rectangle.h" "Classes/Rectangle/Rectangle.cpp" "Classes/Rhomb/Rhomb.h" "Classes/Rhomb/Rhomb.cpp" "Classes/Right_angled_triangle/Right_angled_triangle.h" "Classes/Right_angled_triangle/Right_angled_triangle.cpp" "Classes/Square/Square.h" "Classes/Square/Square.cpp" "Classes/Triangle/Triangle.h" "Classes/Triangle/Triangle.cpp")
 add_executable (${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
