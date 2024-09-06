@@ -29,8 +29,9 @@ void print(Shape& fig)
 			{
 				std::cout << '\n';
 			}
-			std::cout << "Создан\n\n";
+			std::cout << "Создан\n";
 		}
+		std::cout << '\n';
 	}
 	
 }

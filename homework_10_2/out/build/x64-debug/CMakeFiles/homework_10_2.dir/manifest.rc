@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "E:/C++/Visio/HomeWork/homework_10_2/out/build/x64-debug/CMakeFiles/homework_10_2.dir/embed.manifest"
