@@ -1,4 +1,4 @@
-п»ї#ifndef SHAPE_H
+#ifndef SHAPE_H
 #define SHAPE_H
 
 #include <iostream>
@@ -7,7 +7,7 @@
 class Shape
 {
 protected:
-	std::string name{ "Р¤РёРіСѓСЂР°" };
+	std::string name{ "Фигура" };
 	int sides_count{};
 	int side_length_a{};
 	int side_length_b{};
@@ -19,10 +19,10 @@ protected:
 	int corner_C{};
 	int corner_D{};
 
-	bool isQuadrangle{ false }; //РїСЂРёР·РЅР°Рє С‡РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРєР°
-	bool printing_is_allowed{ false }; //РїРµС‡Р°С‚СЊ СЂР°Р·СЂРµС€РµРЅР°
+	bool isQuadrangle{ false }; //признак четырехугольника
+	bool printing_is_allowed{ false }; //печать разрешена
 
-	virtual void check_geometr_figure(); // С„СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕР№ С„РёРіСѓСЂС‹
+	virtual void check_geometr_figure(); // функция проверки правильности геометрической фигуры
 
 public:
 	std::string getName();

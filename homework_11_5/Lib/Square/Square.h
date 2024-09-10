@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Shape.h"
+#include "../Shape/Shape.h"
 
 // Квадрат  
 class Square : public Shape

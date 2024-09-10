@@ -1,7 +1,6 @@
 ﻿#ifndef RIGHT_ANGLED_TRIANGLE_H
 #define RIGHT_ANGLED_TRIANGLE_H
-
-#include "Shape.h"
+#include "../Shape/Shape.h"
 
 // Прямоугольный треугольник
 class Right_angled_triangle : public Shape

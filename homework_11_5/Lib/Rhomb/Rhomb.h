@@ -1,7 +1,7 @@
 ﻿#ifndef RHOMB_H
 #define RHOMB_H
 
-#include "Shape.h"
+#include "../Shape/Shape.h"
 
 // Ромб  
 class Rhomb : public Shape
