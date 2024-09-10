@@ -8,7 +8,7 @@ namespace GreeterStaticLib
 	class Greeter
 	{
 		public:
-			void printMessage(std::string name);
+			void greet(std::string name);
 	};
 }
 

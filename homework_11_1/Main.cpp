@@ -9,7 +9,7 @@ int main() {
 	GreeterStaticLib::Greeter hello{};
 	std::string name{};
 	std::cout << "¬ведите им€: "; std::cin >> name;
-	hello.printMessage(name);
+	hello.greet(name);
 
 	return EXIT_SUCCESS;
 }

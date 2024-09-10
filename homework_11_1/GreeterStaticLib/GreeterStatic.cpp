@@ -2,7 +2,7 @@
 
 namespace GreeterStaticLib
 {
-	void Greeter::printMessage(std::string name) {
+	void Greeter::greet(std::string name) {
 		std::cout << "Здравствуйте, " << name << '!' << std::endl;
 	}
 }
