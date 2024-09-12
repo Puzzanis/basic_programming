@@ -4,8 +4,8 @@
 #include <string>
 #include "../../Ground_vehicle/groundvehicle.h"
 
-class Camel : public GroundVehicle {
+class Centaur : public GroundVehicle {
 public:
-	Camel();
+	Centaur();
 	float movement(int distance) override;
 };

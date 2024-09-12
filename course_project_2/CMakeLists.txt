@@ -14,11 +14,26 @@ set(SOURCES
 
 set(SOURCES_LIB
 	Lib/Ground/Camel/Camel.cpp
+	Lib/Ground/CamelFast/CamelFast.cpp
+	Lib/Ground/Centaur/Centaur.cpp
+	Lib/Ground/Boots/Boots.cpp
+	Lib/Air/MagicCarpet/MagicCarpet.cpp
+	Lib/Air/Eagle/Eagle.cpp
+	Lib/Air/Broom/Broom.cpp
 )
 
 set(HEADER_LIB
-	Lib/ground_vehicle/groundvehicle.h
+	Lib/Ground_vehicle/groundvehicle.h
+	Lib/Air_vehicle/AirVehicle.h
 	Lib/Ground/Camel/Camel.h
+	Lib/Ground/CamelFast/CamelFast.h
+	Lib/Vehicle/AbstractVehicle.h
+	Lib/Vehicle/CreatorVehicle.h
+	Lib/Ground/Centaur/Centaur.h
+	Lib/Ground/Boots/Boots.h
+	Lib/Air/MagicCarpet/MagicCarpet.h
+	Lib/Air/Eagle/Eagle.h
+	Lib/Air/Broom/Broom.h
 )
 
 # Добавьте источник в исполняемый файл этого проекта.

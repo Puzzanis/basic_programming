@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include <string>
-#include "../../Ground_vehicle/groundvehicle.h"
+#include "../../Air_vehicle/AirVehicle.h"
 
-class Camel : public GroundVehicle {
+class Eagle : public AirVehicle {
 public:
-	Camel();
+	Eagle();
 	float movement(int distance) override;
 };
