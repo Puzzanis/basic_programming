@@ -60,11 +60,11 @@ int last_request() {
 	int answer{};
 	std::cout << "1. Провести еще одну гонку" << std::endl;
 	std::cout << "2. Выйти" << std::endl;
-	std::cout << "Выберите тип гонки: ";
+	std::cout << "Выберите действие: ";
 	checking_number(answer);
 	while (answer <= 0 || answer > 2) {
 		std::cout << "Вы выбрали неправильный тип гонки!" << std::endl;
-		std::cout << "Выберите тип гонки: ";
+		std::cout << "Выберите действие: ";
 		checking_number(answer);
 	}
 
@@ -162,7 +162,7 @@ void correct_choise(int& choose, std::vector<Vehicle*>& vehicles, std::vector<in
 		}	
 	}
 	else if (choose == 0 && arr_choose_vehicle.size() < 2) {
-		std::cout << "Необходимо зарегистрировать минимут 2 транспортных средства!" << std::endl;
+		std::cout << "Необходимо зарегистрировать минимум 2 транспортных средства!" << std::endl;
 		print(vehicles, arr_choose_vehicle, type_race, distance);
 	}
 	else if (choose > 0 && (choose - 1 >= vehicles.size())) {

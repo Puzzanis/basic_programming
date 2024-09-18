@@ -62,7 +62,7 @@ int main()
 		std::cout << "Результаты гонки:" << std::endl;
 		int count{};
 		for (auto ts : arr_choose_vehicle) {
-			printf("%d.  %s. Время:\t %3.2f\n", ++count, (vehicles[ts - 1]->get_name()).c_str(), vehicles[ts - 1]->get_last_race());
+			printf("%d.  %s. Время: %3.2f\n", ++count, (vehicles[ts - 1]->get_name()).c_str(), vehicles[ts - 1]->get_last_race());
 			
 		}
 		printf("\n");
@@ -84,7 +84,7 @@ int main()
 
 	delete fabric;
 
-	system("pause");
+	//system("pause");
 	return EXIT_SUCCESS;
 }
 
