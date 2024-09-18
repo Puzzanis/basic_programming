@@ -30,7 +30,7 @@ int main()
 	vehicles.push_back(eagle);
 	vehicles.push_back(broom);
 
-	std::vector<int> arr_choose_vehicle;
+	std::vector<int> arr_choose_vehicle; //массив для зарегистрированных ТС
 
 	print_chars(intro[0].text);
 	std::cout << std::endl;
@@ -54,15 +54,17 @@ int main()
 			}
 		}
 
-
+		//расчет времени движения
 		for (auto ts : arr_choose_vehicle) {
 			vehicles[ts - 1]->movement(distance);
 		}
 
+		//сортировка результатов для вывода в консоль
 		bubbleSort(arr_choose_vehicle, arr_choose_vehicle.size(), vehicles);
 		std::string text = "Результаты гонки:\n";
 		print_chars(text);
 
+		//вывод в консоль результата гонки
 		int count{};
 		for (auto ts : arr_choose_vehicle) {
 			std::string text = std::format("{}. {}. Время: {}\n", ++count, vehicles[ts - 1]->get_name(), vehicles[ts - 1]->get_last_race());
@@ -71,6 +73,7 @@ int main()
 		}
 		printf("\n");
 
+		//запрос на продолжение или выход
 		answer = last_request();
 		system("cls");
 		
@@ -88,7 +91,6 @@ int main()
 
 	delete fabric;
 
-	//system("pause");
 	return EXIT_SUCCESS;
 }
 
