@@ -20,9 +20,12 @@ set(SOURCES_LIB
 	Lib/Air/MagicCarpet/MagicCarpet.cpp
 	Lib/Air/Eagle/Eagle.cpp
 	Lib/Air/Broom/Broom.cpp
+	Lib/Menu/Menu.cpp
+	Lib/Sort/Sort.cpp
 )
 
 set(HEADER_LIB
+	Lib/Base/Vehicle.h
 	Lib/Ground_vehicle/groundvehicle.h
 	Lib/Air_vehicle/AirVehicle.h
 	Lib/Ground/Camel/Camel.h
@@ -34,13 +37,15 @@ set(HEADER_LIB
 	Lib/Air/MagicCarpet/MagicCarpet.h
 	Lib/Air/Eagle/Eagle.h
 	Lib/Air/Broom/Broom.h
+	Lib/Menu/Menu.h
+	Lib/Sort/Sort.h
 )
 
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (${PROJECT_NAME} ${SOURCES})
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-add_library(vehiclesLib SHARED ${HEADER_LIB} ${SOURCES_LIB})
+add_library(vehiclesLib SHARED ${HEADER_LIB} ${SOURCES_LIB} )
 target_link_libraries(${PROJECT_NAME} vehiclesLib)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

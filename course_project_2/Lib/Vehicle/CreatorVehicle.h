@@ -13,25 +13,25 @@
 
 class CreatorVechicle : public AbstractFactoryVehicle {
 public:
-	GroundVehicle* CreateCamel() const override {
+	Vehicle* CreateCamel() const override {
 		return  new Camel{};
 	}
-	GroundVehicle* CreateCamelFast() const override {
+	Vehicle* CreateCamelFast() const override {
 		return  new CamelFast{};
 	}
-	GroundVehicle* CreateCentaur() const override {
+	Vehicle* CreateCentaur() const override {
 		return  new Centaur{};
 	}
-	GroundVehicle* CreateBoots() const override {
+	Vehicle* CreateBoots() const override {
 		return  new Boots{};
 	}
-	AirVehicle* CreateMagicCarpet() const override {
+	Vehicle* CreateMagicCarpet() const override {
 		return  new MagicCarpet{};
 	}
-	AirVehicle* CreateEagle() const override {
+	Vehicle* CreateEagle() const override {
 		return  new Eagle{};
 	}
-	AirVehicle* CreateBroom() const override {
+	Vehicle* CreateBroom() const override {
 		return  new Broom{};
 	}
 };

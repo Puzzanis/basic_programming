@@ -19,6 +19,7 @@ float Centaur::movement(int distance) {
 	else {
 		res_time = number_of_rest_intervals_ * duration_of_rest_[0];
 	}
+	last_race_ = res_time;
 	return res_time;
 }
 
@@ -29,3 +30,7 @@ Centaur::Centaur()
 	time_before_rest_ = 8;
 	duration_of_rest_ = { 2 };
 }
+
+std::string Centaur::get_name() { return name_; }
+int Centaur::get_type() { return type_; };
+float Centaur::get_last_race() { return last_race_; };

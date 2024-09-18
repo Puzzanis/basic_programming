@@ -18,7 +18,7 @@ float MagicCarpet::movement(int distance) {
 	}
 	res_time = res_distance / speed_;
 
-	
+	last_race_ = res_time;
 	return res_time;
 }
 
@@ -27,3 +27,7 @@ MagicCarpet::MagicCarpet()
 	name_ = "Ковёр-самолёт";
 	speed_ = 10;
 }
+
+std::string MagicCarpet::get_name() { return name_; }
+int MagicCarpet::get_type() { return type_; };
+float MagicCarpet::get_last_race() { return last_race_; };

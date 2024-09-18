@@ -19,6 +19,7 @@ float Boots::movement(int distance) {
 	else {
 		res_time = number_of_rest_intervals_ * duration_of_rest_[0];
 	}
+	last_race_ = res_time;
 	return res_time;
 }
 
@@ -29,3 +30,7 @@ Boots::Boots()
 	time_before_rest_ = 60;
 	duration_of_rest_ = { 10,5 };
 }
+
+std::string Boots::get_name() { return name_; }
+int Boots::get_type() { return type_; };
+float Boots::get_last_race() { return last_race_; };

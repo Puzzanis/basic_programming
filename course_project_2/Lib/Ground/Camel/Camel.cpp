@@ -19,6 +19,7 @@ float Camel::movement(int distance) {
 	else { 
 		res_time = number_of_rest_intervals_ * duration_of_rest_[0];
 	}
+	last_race_ = res_time;
 	return res_time;
 }
 
@@ -29,3 +30,7 @@ Camel::Camel()
 	time_before_rest_ = 30;
 	duration_of_rest_ = { 5,8 };
 }
+
+std::string Camel::get_name() { return name_; }
+int Camel::get_type() { return type_; };
+float Camel::get_last_race() { return last_race_; };
