@@ -97,8 +97,8 @@ int registration(int size) {
 	int answer{};
 
 	if (!size) {
-		print_chars(std::string("Должно быть зарегестрировано хотя бы 2 траспортых средства\n"));
-		print_chars(std::string("1. Зарегестрировать транспорт\n"));
+		print_chars(std::string("Должно быть зарегистрировано хотя бы 2 транспортых средства\n"));
+		print_chars(std::string("1. Зарегистрировать транспорт\n"));
 		print_chars(std::string("Выберите действие: "));
 		checking_number(answer);
 		while (answer != 1) {
@@ -108,7 +108,7 @@ int registration(int size) {
 		}
 	}
 	else {
-		print_chars(std::string("1. Зарегестрировать транспорт\n"));
+		print_chars(std::string("1. Зарегистрировать транспорт\n"));
 		print_chars(std::string("2. Начать гонку\n"));
 		print_chars(std::string("Выберите действие: "));
 		checking_number(answer);
