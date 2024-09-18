@@ -11,15 +11,15 @@ void checking_number(int& num) {
 			break;
 		}
 		catch (std::invalid_argument) {
-			std::cout << "Недопустимый ввод. Введите число!" << std::endl;
-			std::cout << "Повторите ввод: ";
+			print_chars(std::string("Недопустимый ввод. Введите число!\n"));
+			print_chars(std::string("Повторите ввод: "));
 			std::cin.clear();
 			std::cin.ignore(10, '\n');
 			continue;
 		}
 		catch (std::out_of_range) {
-			std::cout << "Недопустимый ввод!" << std::endl;
-			std::cout << "Повторите ввод: ";
+			print_chars(std::string("Недопустимый ввод!\n"));
+			print_chars(std::string("Повторите ввод: "));
 			std::cin.clear();
 			std::cin.ignore(10, '\n');
 			continue;
@@ -27,8 +27,8 @@ void checking_number(int& num) {
 		catch (...)
 		{
 			//Если будет выброшено какое-то исключение, которое не обработано выше, то говорим, что возникла неизвестная ошибка
-			std::cout << "Неизвестная ошибка! \n";
-			std::cout << "Повторите ввод: ";
+			print_chars(std::string("Неизвестная ошибка! \n"));
+			print_chars(std::string("Повторите ввод: "));
 			std::cin.clear();
 			std::cin.ignore(10, '\n');
 			continue;
@@ -37,19 +37,26 @@ void checking_number(int& num) {
 	}
 }
 
+//печать символов побуквенно ;-)
+void print_chars(std::string& text) {
+	for (int i = 0; i < text.length(); i++) {
+		std::cout << text[i];
+		Sleep(10);
+	}
+}
+
 //меню выбора типа транспортного средства
 int introduction() {
-	std::cout << intro[0].text << std::endl;
 	for (int i = 1; i < (sizeof(intro) / sizeof(intro[0])); i++) {
-		std::cout << intro[i].item << ". " << intro[i].text << std::endl;
+		print_chars(std::to_string(intro[i].item) + ". " + intro[i].text + "\n");
 	}
 
 	int type_race{};
-	std::cout << "Выберите тип гонки: ";
+	print_chars(std::string("Выберите тип гонки: "));
 	checking_number(type_race);
 	while (type_race > 3 || type_race < 1 ) {
-		std::cout << "Вы выбрали неправильный тип гонки!" << std::endl;
-		std::cout << "Выберите тип гонки: ";
+		print_chars(std::string("Вы выбрали неправильный тип гонки!\n"));
+		print_chars(std::string("Выберите тип гонки: "));
 		checking_number(type_race);
 	}
 
@@ -58,13 +65,13 @@ int introduction() {
 
 int last_request() {
 	int answer{};
-	std::cout << "1. Провести еще одну гонку" << std::endl;
-	std::cout << "2. Выйти" << std::endl;
-	std::cout << "Выберите действие: ";
+	print_chars(std::string("1. Провести еще одну гонку\n"));
+	print_chars(std::string("2. Выйти\n"));
+	print_chars(std::string("Выберите действие: "));
 	checking_number(answer);
 	while (answer <= 0 || answer > 2) {
-		std::cout << "Вы выбрали неправильный тип гонки!" << std::endl;
-		std::cout << "Выберите действие: ";
+		print_chars(std::string("Вы выбрали неправильный тип гонки!\n"));
+		print_chars(std::string("Выберите действие: "));
 		checking_number(answer);
 	}
 
@@ -74,11 +81,11 @@ int last_request() {
 //меню выбора длины дистанции
 int request_length_distance() {
 	int distance{};
-	std::cout << "Укажите длину дистанции (должна быть положительной): ";
+	print_chars(std::string("Укажите длину дистанции (должна быть положительной): "));
  	checking_number(distance);
 	while (distance <= 0) {
-		std::cout << "Вы ввели неправильную длину дистанции!" << std::endl;
-		std::cout << "Укажите длину дистанции (должна быть положительной): ";
+		print_chars(std::string("Вы ввели неправильную длину дистанции!\n"));
+		print_chars(std::string("Укажите длину дистанции (должна быть положительной): "));
 		checking_number(distance);
 	}
 
@@ -90,24 +97,24 @@ int registration(int size) {
 	int answer{};
 
 	if (!size) {
-		std::cout << "Должно быть зарегестрировано хотя бы 2 траспортых средства" << std::endl;
-		std::cout << "1. Зарегестрировать транспорт" << std::endl;
-		std::cout << "Выберите действие: ";
+		print_chars(std::string("Должно быть зарегестрировано хотя бы 2 траспортых средства\n"));
+		print_chars(std::string("1. Зарегестрировать транспорт\n"));
+		print_chars(std::string("Выберите действие: "));
 		checking_number(answer);
 		while (answer != 1) {
-			std::cout << "Вы выбрали неправильный вариaнт!" << std::endl;
-			std::cout << "Выберите действие: ";
+			print_chars(std::string("Вы выбрали неправильный вариaнт!\n"));
+			print_chars(std::string("Выберите действие: "));
 			checking_number(answer);
 		}
 	}
 	else {
-		std::cout << "1. Зарегестрировать транспорт" << std::endl;
-		std::cout << "2. Начать гонку" << std::endl;
-		std::cout << "Выберите действие: ";
+		print_chars(std::string("1. Зарегестрировать транспорт\n"));
+		print_chars(std::string("2. Начать гонку\n"));
+		print_chars(std::string("Выберите действие: "));
 		checking_number(answer);
 		while (answer != 1 && answer != 2) {
-			std::cout << "Вы выбрали неправильный вариaнт!" << std::endl;
-			std::cout << "Выберите действие: ";
+			print_chars(std::string("Вы выбрали неправильный вариaнт!\n"));
+			print_chars(std::string("Выберите действие: "));
 			checking_number(answer);
 		}
 	}
@@ -118,11 +125,11 @@ int choose_vehicle(std::vector< Vehicle* > names, int size) {
 	int choose{};
 
 	for (int i = 0; i < size; i++) {
-		std::cout << i + 1 << ". " << names[i]->get_name() << std::endl;
+		print_chars(std::to_string(i + 1) + ". " + names[i]->get_name() + '\n');
 	}
 
-	std::cout << "0" << ". " << "Закончить регистрацию" << std::endl;
-	std::cout << "Выберите транспорт или 0 для окончания процесса регистрации: ";
+	print_chars(std::string("0. ") + std::string("Закончить регистрацию") + '\n');
+	print_chars(std::string("Выберите транспорт или 0 для окончания процесса регистрации: "));
 	checking_number(choose);
 	return choose;
 }
@@ -145,28 +152,28 @@ void correct_choise(int& choose, std::vector<Vehicle*>& vehicles, std::vector<in
 			if (arr_choose_vehicle.size() > 0) {
 				for (int value : arr_choose_vehicle) {
 					if (value == choose) {
-						std::cout << vehicles[value - 1] ->get_name() << " уже зарегистрирован!" << std::endl;
+						print_chars(vehicles[value - 1] ->get_name() + std::string(" уже зарегистрирован!") + '\n');
 						print(vehicles, arr_choose_vehicle, type_race, distance);
 						return;
 					}
 				}
 			}
 			arr_choose_vehicle.push_back(choose);
-			std::cout << vehicles[choose - 1]->get_name() << " успешно зарегистрирован!" << std::endl;
+			print_chars(vehicles[choose - 1]->get_name() + std::string(" успешно зарегистрирован!") + '\n');
 			print(vehicles, arr_choose_vehicle, type_race, distance);
 			
 		}
 		else {
-			std::cout << "Попытка зарегистрировать неправильный тип транспортного средства!" << std::endl;
+			print_chars(std::string("Попытка зарегистрировать неправильный тип транспортного средства!\n"));
 			print(vehicles, arr_choose_vehicle, type_race, distance);
 		}	
 	}
 	else if (choose == 0 && arr_choose_vehicle.size() < 2) {
-		std::cout << "Необходимо зарегистрировать минимум 2 транспортных средства!" << std::endl;
+		print_chars(std::string("Необходимо зарегистрировать минимум 2 транспортных средства!\n"));
 		print(vehicles, arr_choose_vehicle, type_race, distance);
 	}
 	else if (choose > 0 && (choose - 1 >= vehicles.size())) {
-		std::cout << "Выбранный транспорт не соответствует перечню доступных ТС!" << std::endl;
+		print_chars(std::string("Выбранный транспорт не соответствует перечню доступных ТС!\n"));
 		print(vehicles, arr_choose_vehicle, type_race, distance);
 	}
 	
@@ -174,13 +181,13 @@ void correct_choise(int& choose, std::vector<Vehicle*>& vehicles, std::vector<in
 
 //печать о выбранном типе гонки, дистанции и зарегестрированных ТС
 void print(std::vector<Vehicle*> vehicles, std::vector<int> arr_choose_vehicle, int type_race, int distance) {
-	std::cout << intro[type_race].text << ". Расстояние: " << distance << std::endl;
+	print_chars(intro[type_race].text + std::string(". Расстояние: ") + std::to_string(distance) + '\n');
 	if (arr_choose_vehicle.size() > 0) {
-		std::cout << "Зарегистрированные транспортные средства: ";
+		print_chars(std::string("Зарегистрированные транспортные средства: "));
 		for (int i = 0; i < arr_choose_vehicle.size(); i++) {
-			std::cout << ((i > 0) ? ", " : "");
+			print_chars(std::string(((i > 0) ? ", " : "")));
 			std::cout << vehicles[arr_choose_vehicle[i] - 1]->get_name();
 		}
-		std::cout << std::endl;
+		print_chars(std::string("\n"));
 	};
 }

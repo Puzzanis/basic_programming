@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <windows.h>
 #include "../Base/Vehicle.h"
 
 struct menuItem {
@@ -27,3 +28,4 @@ void correct_choise(int& choose, std::vector<Vehicle*>& vehicles, std::vector<in
 void checking_number(int& num);			//проверка на ввод чисел
 void print(std::vector<Vehicle*> vehicles, std::vector<int> arr_choose_vehicle, int type_race, int distance);
 int last_request();
+void print_chars(std::string& text);

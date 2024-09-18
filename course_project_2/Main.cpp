@@ -32,6 +32,8 @@ int main()
 
 	std::vector<int> arr_choose_vehicle;
 
+	print_chars(intro[0].text);
+	std::cout << std::endl;
 	while (true) {
 		//Обработка меню
 		int type_race = introduction(); //меню выбора типа гонки
@@ -55,14 +57,16 @@ int main()
 
 		for (auto ts : arr_choose_vehicle) {
 			vehicles[ts - 1]->movement(distance);
-			//std::cout << vehicles[ts - 1]->get_name() << ": " << vehicles[ts - 1]->get_last_race() << std::endl;
 		}
 
 		bubbleSort(arr_choose_vehicle, arr_choose_vehicle.size(), vehicles);
-		std::cout << "Результаты гонки:" << std::endl;
+		std::string text = "Результаты гонки:\n";
+		print_chars(text);
+
 		int count{};
 		for (auto ts : arr_choose_vehicle) {
-			printf("%d.  %s. Время: %3.2f\n", ++count, (vehicles[ts - 1]->get_name()).c_str(), vehicles[ts - 1]->get_last_race());
+			std::string text = std::format("{}. {}. Время: {}\n", ++count, vehicles[ts - 1]->get_name(), vehicles[ts - 1]->get_last_race());
+			print_chars(text);
 			
 		}
 		printf("\n");
