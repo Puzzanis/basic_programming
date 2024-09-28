@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 
 int array_serch(std::vector<int>, int);
@@ -9,12 +9,12 @@ int main() {
 
 	std::vector<int> arr = { 3, 3, 4, 7, 7, 7, 11, 13, 13 };
 	int value{};
-	std::cout << "Ââåäèòå òî÷êó îòñ÷åòà â äèàïïàçîíå îò " << arr.front() << " äî " << arr.back() << " :"; std::cin >> value;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¾Ñ‡ÐºÑƒ Ð¾Ñ‚ÑÑ‡ÐµÑ‚Ð° Ð² Ð´Ð¸Ð°Ð¿Ð¿Ð°Ð·Ð¾Ð½Ðµ Ð¾Ñ‚ " << arr.front() << " Ð´Ð¾ " << arr.back() << " :"; std::cin >> value;
 
 	
 	int rez = array_serch(arr, value);
-	if (rez != -1) { std::cout << "Êîëè÷åñòâî ýëåìåíòîâ áîëüøå ÷åì " << value << " ðàâíî " << rez << std::endl; }
-	else { std::cout << "Êîëè÷åñòâî ýëåìåíòîâ áîëüøå ÷åì " << value << " ðàâíî 0" << std::endl; }
+	if (rez != -1) { std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‡ÐµÐ¼ " << value << " Ñ€Ð°Ð²Ð½Ð¾ " << rez << std::endl; }
+	else { std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‡ÐµÐ¼ " << value << " Ñ€Ð°Ð²Ð½Ð¾ 0" << std::endl; }
 	return EXIT_SUCCESS;
 }
 
