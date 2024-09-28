@@ -2,7 +2,7 @@
 #include "Camel.h"
 
 
-float Camel::movement(int distance) {
+float Camel::movement(const int& distance) {
 	double fractpart; // дробная часть
 	double intpart;   // целая часть
 	float res_time = (float)distance / (float)speed_;
@@ -29,8 +29,8 @@ Camel::Camel()
 	speed_ = 10;
 	time_before_rest_ = 30;
 	duration_of_rest_ = { 5,8 };
-}
+};
 
-std::string Camel::get_name() { return name_; }
-int Camel::get_type() { return type_; };
-float Camel::get_last_race() { return last_race_; };
+std::string& Camel::get_name() { return name_; }
+int Camel::get_type() const { return type_; };
+float Camel::get_last_race() const { return last_race_; };

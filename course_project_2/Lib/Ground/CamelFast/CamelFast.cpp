@@ -1,6 +1,6 @@
 #include "CamelFast.h"
 
-float CamelFast::movement(int distance) {
+float CamelFast::movement(const int& distance) {
 	double fractpart; // дробная часть
 	double intpart;   // целая часть
 	float res_time = (float)distance / (float)speed_;
@@ -23,12 +23,12 @@ float CamelFast::movement(int distance) {
 
 CamelFast::CamelFast()
 {
-	name_ = "Верблюд-быстроход";
-	speed_ = 40;
+	name_ = "Верблюд-быстроход" ;
+	speed_= 40 ;
 	time_before_rest_ = 10;
-	duration_of_rest_ = {5, 6.5, 8};
+	duration_of_rest_ = { 5, 6.5, 8 };
 }
 
-std::string CamelFast::get_name() { return name_; }
-int CamelFast::get_type() { return type_; };
-float CamelFast::get_last_race() { return last_race_; };
+std::string& CamelFast::get_name()  { return name_; }
+int CamelFast::get_type() const { return type_; };
+float CamelFast::get_last_race() const { return last_race_; };

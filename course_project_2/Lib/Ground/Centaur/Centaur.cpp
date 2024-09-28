@@ -2,7 +2,7 @@
 #include "Centaur.h"
 
 
-float Centaur::movement(int distance) {
+float Centaur::movement(const int& distance) {
 	double fractpart; // дробная часть
 	double intpart;   // целая часть
 	float res_time = (float)distance / (float)speed_;
@@ -31,6 +31,6 @@ Centaur::Centaur()
 	duration_of_rest_ = { 2 };
 }
 
-std::string Centaur::get_name() { return name_; }
-int Centaur::get_type() { return type_; };
-float Centaur::get_last_race() { return last_race_; };
+std::string& Centaur::get_name() { return name_; }
+int Centaur::get_type() const { return type_; };
+float Centaur::get_last_race() const { return last_race_; };

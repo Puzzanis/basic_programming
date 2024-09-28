@@ -1,7 +1,7 @@
 #include "Broom.h"
 
 
-float Broom::movement(int distance) {
+float Broom::movement(const int& distance) {
 	int interval_count = distance / 1000;
 	float tmp = ((100 - interval_count) / 100.0);
 	float res_distance = distance * tmp;
@@ -11,12 +11,10 @@ float Broom::movement(int distance) {
 	return res_time;
 }
 
-Broom::Broom()
-{
+Broom::Broom() {
 	name_ = "Метла";
-	speed_ = 20;
+	int speed_ =20;
 }
-
-std::string Broom::get_name() { return name_; }
-int Broom::get_type() { return type_; }
-float Broom::get_last_race() { return last_race_; };
+std::string& Broom::get_name()  { return name_; }
+int Broom::get_type() const { return type_; }
+float Broom::get_last_race() const { return last_race_; };

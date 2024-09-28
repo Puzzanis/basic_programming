@@ -2,10 +2,10 @@
 #include <map>
 #include <format>
 #include <string>
-#include "Lib/Base/Vehicle.h"
-#include "Lib/Menu/Menu.h"
-#include "Lib/Vehicle/CreatorVehicle.h"
-#include "Lib/Sort/Sort.h"
+#include "Vehicle.h"
+#include "Menu.h"
+#include "CreatorVehicle.h"
+#include "Sort.h"
 
 int main()
 {
@@ -13,20 +13,21 @@ int main()
 
 	CreatorVechicle* fabric = new CreatorVechicle();
 	Vehicle* camel = fabric->CreateCamel();
-	Vehicle* camelfast = fabric->CreateCamelFast();
+	Vehicle* camelFast = fabric->CreateCamelFast();
 	Vehicle* centaur = fabric->CreateCentaur();
 	Vehicle* boots = fabric->CreateBoots();
-	Vehicle* magiccarpet = fabric->CreateMagicCarpet();
+	Vehicle* magicCarpet = fabric->CreateMagicCarpet();
 	Vehicle* eagle = fabric->CreateEagle();
 	Vehicle* broom = fabric->CreateBroom();
 
+	//camel->get_name() = "ksjfkljsflkj";
 	
 	std::vector<Vehicle*> vehicles;
 	vehicles.push_back(camel);
-	vehicles.push_back(camelfast);
+	vehicles.push_back(camelFast);
 	vehicles.push_back(centaur);
 	vehicles.push_back(boots);
-	vehicles.push_back(magiccarpet);
+	vehicles.push_back(magicCarpet);
 	vehicles.push_back(eagle);
 	vehicles.push_back(broom);
 
@@ -34,7 +35,7 @@ int main()
 
 	print_chars(intro[0].text);
 	std::cout << std::endl;
-	while (true) {
+	for (;;) {
 		//Обработка меню
 		int type_race = introduction(); //меню выбора типа гонки
 		system("cls");
@@ -61,8 +62,8 @@ int main()
 
 		//сортировка результатов для вывода в консоль
 		bubbleSort(arr_choose_vehicle, arr_choose_vehicle.size(), vehicles);
-		std::string text = "Результаты гонки:\n";
-		print_chars(text);
+		std::string text_res = "Результаты гонки:\n";
+		print_chars(text_res);
 
 		//вывод в консоль результата гонки
 		int count{};
@@ -82,10 +83,10 @@ int main()
 	}
 
 	delete camel;
-	delete camelfast;
+	delete camelFast;
 	delete centaur;
 	delete boots;
-	delete magiccarpet;
+	delete magicCarpet;
 	delete eagle;
 	delete broom;
 

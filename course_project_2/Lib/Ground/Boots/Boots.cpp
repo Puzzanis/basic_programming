@@ -2,7 +2,7 @@
 #include "Boots.h"
 
 
-float Boots::movement(int distance) {
+float Boots::movement(const int& distance) {
 	double fractpart; // дробна€ часть
 	double intpart;   // цела€ часть
 	float res_time = (float)distance / (float)speed_;
@@ -22,15 +22,14 @@ float Boots::movement(int distance) {
 	last_race_ = res_time;
 	return res_time;
 }
-
 Boots::Boots()
 {
 	name_ = "Ѕотинки-вездеходы";
-	speed_ = 6;
+	speed_ = 6 ;
 	time_before_rest_ = 60;
 	duration_of_rest_ = { 10,5 };
 }
 
-std::string Boots::get_name() { return name_; }
-int Boots::get_type() { return type_; };
-float Boots::get_last_race() { return last_race_; };
+std::string& Boots::get_name() { return name_; }
+int Boots::get_type() const { return type_; };
+float Boots::get_last_race() const { return last_race_; };

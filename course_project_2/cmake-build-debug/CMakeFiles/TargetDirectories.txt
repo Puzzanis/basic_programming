@@ -1,0 +1,4 @@
+E:/C++/Visio/HomeWork/course_project_2/cmake-build-debug/CMakeFiles/course_project_2.dir
+E:/C++/Visio/HomeWork/course_project_2/cmake-build-debug/CMakeFiles/vehiclesLib.dir
+E:/C++/Visio/HomeWork/course_project_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/C++/Visio/HomeWork/course_project_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

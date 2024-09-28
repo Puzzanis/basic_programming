@@ -12,6 +12,8 @@ set(SOURCES
 	Main.cpp
 )
 
+file(GLOB src "")
+
 set(SOURCES_LIB
 	Lib/Ground/Camel/Camel.cpp
 	Lib/Ground/CamelFast/CamelFast.cpp
@@ -46,6 +48,18 @@ add_executable (${PROJECT_NAME} ${SOURCES})
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 add_library(vehiclesLib SHARED ${HEADER_LIB} ${SOURCES_LIB} )
+target_include_directories(${PROJECT_NAME} PUBLIC
+	/Lib
+	Lib/Base
+	Lib/Air
+	Lib/Air_vehicle
+	Lib/Ground
+	Lib/Ground_vehicle
+	Lib/Menu
+	Lib/Sort
+	Lib/Vehicle
+)
+
 target_link_libraries(${PROJECT_NAME} vehiclesLib)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

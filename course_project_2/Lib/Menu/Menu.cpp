@@ -38,7 +38,7 @@ void checking_number(int& num) {
 }
 
 //печать символов побуквенно ;-)
-void print_chars(std::string& text) {
+void print_chars(std::basic_string<char> &text) {
 	for (int i = 0; i < text.length(); i++) {
 		std::cout << text[i];
 		Sleep(10);

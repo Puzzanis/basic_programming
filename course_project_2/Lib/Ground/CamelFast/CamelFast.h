@@ -7,8 +7,8 @@
 class CamelFast : public GroundVehicle {
 public:
 	CamelFast();
-	float movement(int distance) override;
-	std::string get_name();
-	int get_type() override;
-	float get_last_race() override;
+	float movement(const int& distance) override;
+	std::string& get_name() override;
+	int get_type() const override;
+	float get_last_race() const override;
 };
