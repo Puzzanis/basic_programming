@@ -1,6 +1,6 @@
 #include <iostream>
 /*
-Сложность алгоритма O(2^n)
+Сложность O(2^n)
 по памяти O(n)
 */
 int fibo(int num) { return (num <= 0) ? 0 : (num == 1) ? 1 : fibo(num - 1) + fibo(num - 2); }
