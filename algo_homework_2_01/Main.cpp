@@ -3,7 +3,7 @@
 Сложность O(2^n)
 по памяти O(n)
 */
-int fibo(int num) { return (num <= 0) ? 0 : (num == 1) ? 1 : fibo(num - 1) + fibo(num - 2); }
+int fibo(int num) { return (num <= 1) ? num : fibo(num - 1) + fibo(num - 2); }
 
 int main()
 {
