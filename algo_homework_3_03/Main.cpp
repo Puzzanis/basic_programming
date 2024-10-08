@@ -1,4 +1,4 @@
-#include <algorithm>
+ï»¿#include <algorithm>
 #include <iostream>
 #include <vector>
 #include "Count_Sort.h"
@@ -6,10 +6,10 @@
 
 void print(std::vector<int>& arr1, std::vector<int>& arr2)
 {
-	std::cout << "Èñõîäíûé ìàññèâ: ";
+	std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
 	copy(arr1.begin(), arr1.end(), std::ostream_iterator<int>(std::cout, " "));
 	std::cout << std::endl;
-	std::cout << "Îòñîðòèðîâàííûé ìàññèâ: ";
+	std::cout << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
 	copy(arr2.begin(), arr2.end(), std::ostream_iterator<int>(std::cout, " "));
 	std::cout << std::endl;
 	std::cout << std::endl;
