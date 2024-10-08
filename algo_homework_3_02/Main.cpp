@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <iterator>
 #include "Quick_sort.h"
@@ -18,14 +18,14 @@ int main()
 	std::vector<int> arr3{ 24, 66, 20, 79, 30, 16, 19, 62, 94, 59, 0, 7, 59, 90, 84, 60, 95, 62 };
 
 
-	std::cout << "Èñõîäíûé ìàññèâ: "; print(arr1);
-	std::cout << "Îòñîðòèðîâàííûé ìàññèâ: "; quickSort(&arr1, 0, arr1.size() - 1); print(arr1);
+	std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; print(arr1);
+	std::cout << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; quickSort(&arr1, 0, arr1.size() - 1); print(arr1);
 
-	std::cout << "Èñõîäíûé ìàññèâ: "; print(arr2);
-	std::cout << "Îòñîðòèðîâàííûé ìàññèâ: "; quickSort(&arr2, 0, arr2.size() - 1); print(arr2);
+	std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; print(arr2);
+	std::cout << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; quickSort(&arr2, 0, arr2.size() - 1); print(arr2);
 
-	std::cout << "Èñõîäíûé ìàññèâ: "; print(arr3);
-	std::cout << "Îòñîðòèðîâàííûé ìàññèâ: "; quickSort(&arr3, 0, arr3.size() - 1); print(arr3);
+	std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; print(arr3);
+	std::cout << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: "; quickSort(&arr3, 0, arr3.size() - 1); print(arr3);
 	
 
 	
