@@ -1,4 +1,4 @@
-#include <iterator>
+ï»¿#include <iterator>
 #include <iostream>
 #include <vector>
 
@@ -11,16 +11,16 @@ int main()
 	setlocale(LC_ALL, "rus");  //setting the language standard
 
 	int actual_size{};
-	std::cout << "Ââåäèòå ôàêòè÷åcêèé ðàçìåð ìàññèâà: "; std::cin >> actual_size;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°ÐºÑ‚Ð¸Ñ‡ÐµcÐºÐ¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; std::cin >> actual_size;
 	int logical_size{};
-	std::cout << "Ââåäèòå ëîãè÷åñêèé ðàçìåð ìàññèâà: "; std::cin >> logical_size;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð»Ð¾Ð³Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; std::cin >> logical_size;
 	auto* arr = new int[actual_size];
 
-	if (logical_size > actual_size) { std::cout << "Îøèáêà! Ëîãè÷åñêèé ðàçìåð ìàññèâà íå ìîæåò ïðåâûøàòü ôàêòè÷åñêèé!\n"; return EXIT_SUCCESS; }
+	if (logical_size > actual_size) { std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð›Ð¾Ð³Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¿Ñ€ÐµÐ²Ñ‹ÑˆÐ°Ñ‚ÑŒ Ñ„Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹!\n"; return EXIT_SUCCESS; }
 
 	for (int i = 0; i < logical_size; i++)
 	{
-		std::cout << "Ââåäèòå arr[" << i << "]: "; std::cin >> arr[i];
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ arr[" << i << "]: "; std::cin >> arr[i];
 	}
 
 	print_dynamic_array(arr, logical_size, actual_size);
@@ -28,8 +28,8 @@ int main()
 	
 	for (;;)
 	{
-		if (new_val == 0) { std::cout << "Ñïàñèáî! Âàø ìàññèâ:"; print_dynamic_array(arr, logical_size, actual_size); break; }
-		std::cout << "âåäèòå ýëåìåíò äëÿ äîáàâëåíèÿ (ââåäèòå 0 äëÿ âûõîäà):"; std::cin >> new_val;
+		if (new_val == 0) { std::cout << "Ð¡Ð¿Ð°ÑÐ¸Ð±Ð¾! Ð’Ð°Ñˆ Ð¼Ð°ÑÑÐ¸Ð²:"; print_dynamic_array(arr, logical_size, actual_size); break; }
+		std::cout << "Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ (Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 0 Ð´Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð°):"; std::cin >> new_val;
 		arr = append_to_dynamic_array(arr, logical_size, actual_size, new_val);
 		print_dynamic_array(arr, logical_size, actual_size);
 	}
