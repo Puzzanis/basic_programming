@@ -29,7 +29,7 @@ int main()
 	for (;;)
 	{
 		if (new_val == 0) { std::cout << "Спасибо! Ваш массив:"; print_dynamic_array(arr, logical_size, actual_size); break; }
-		std::cout << "ведите элемент для добавления: "; std::cin >> new_val;
+		std::cout << "ведите элемент для добавления (введите 0 для выхода):"; std::cin >> new_val;
 		arr = append_to_dynamic_array(arr, logical_size, actual_size, new_val);
 		print_dynamic_array(arr, logical_size, actual_size);
 	}
