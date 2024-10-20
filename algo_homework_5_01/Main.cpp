@@ -1,9 +1,6 @@
 ﻿#include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
-//#include <cmath>
-#include <Windows.h>
 
 
 // Функция для вычисления индекса родителя по индексу потомка
