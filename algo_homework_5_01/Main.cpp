@@ -45,7 +45,7 @@ void print_pyramid(std::vector<int> arr) {
 	}
 }
 
-void print_arr(std::vector<int> arr)
+void print_arr(std::vector<int> const arr)
 {
 	std::cout << "Исходный массив: ";
 	for (auto val : arr)
