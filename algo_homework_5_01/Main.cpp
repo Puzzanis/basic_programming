@@ -8,7 +8,6 @@
 
 // Функция для вычисления индекса родителя по индексу потомка
 int pyramid_parent_index(int child_index) {
-	// Возвращает индекс родителя, используя формулу (child_index - 1) / 2
 	return (child_index - 1) / 2;
 }
 
