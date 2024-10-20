@@ -37,21 +37,15 @@ void print_pyramid(std::vector<int> arr) {
 		std::string position_str = pyramid_is_left(i) ? "left" : "right";
 
 		// Выводим информацию о текущем элементе:
-		// - Уровень
-		// - Позиция (левый/правый)
-		// - Значение родителя
-		// - Значение элемента
 		std::cout << level << " " << position_str << "(" << arr[parent_index] << ") " << arr[i] << std::endl;
 	}
 }
 
-void print_arr(std::vector<int> const arr)
+// Функция для исходного массива
+void print_arr(std::vector<int> const& arr)
 {
 	std::cout << "Исходный массив: ";
-	for (auto val : arr)
-	{
-		std::cout << val << " ";
-	}
+	for (auto val : arr) { std::cout << val << " "; }
 	std::cout << std::endl;
 }
 
