@@ -11,7 +11,7 @@ uint64_t hash_function(std::string const& s, int const indx, int const length)
 	uint64_t tmp{ 1 };
 	for (int i = indx; i < (indx + length); i++)
 	{
-		hash_summ += tmp * static_cast<short>(s[i]);
+		hash_summ += tmp * static_cast<uint64_t>(s[i]);
 		tmp *= p;
 	}
 	return hash_summ % mod;
