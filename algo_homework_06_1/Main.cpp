@@ -5,7 +5,7 @@
 
 int simple_string_hash(std::string const& s)
 {
-	int hash_summ = 0;
+	int hash_summ{ 0 };
 	for (auto ch : s){ hash_summ += static_cast<int>(ch);}
 	return hash_summ;
 }
