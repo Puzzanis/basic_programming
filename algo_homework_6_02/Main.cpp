@@ -10,7 +10,7 @@ int simple_string_hash(std::string const& s, int const &p, int const &n)
 	uint64_t tmp{ 1 };
 	for (int i = 0; i < s.length(); i++)
 	{
-		hash_summ += tmp * static_cast<short>(s[i]);
+		hash_summ += tmp * static_cast<uint64_t>(s[i]);
 		tmp *= p;
 	}
 	return hash_summ % n;
