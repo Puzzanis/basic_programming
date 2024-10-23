@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <Windows.h>
 
@@ -16,7 +16,7 @@ int main()
 	SetConsoleCP(1251);
 
 	std::string inp_string{};
-	std::cout << "Ââåäèòå ñòðîêó: "; std::cin >> inp_string;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ñ€Ð¾ÐºÑƒ: "; std::cin >> inp_string;
 
 	std::cout << simple_string_hash(inp_string);
 	return EXIT_SUCCESS;
