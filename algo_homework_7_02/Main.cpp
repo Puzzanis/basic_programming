@@ -1,4 +1,4 @@
-#include <fstream> // для файловых потоков
+п»ї#include <fstream> // РґР»СЏ С„Р°Р№Р»РѕРІС‹С… РїРѕС‚РѕРєРѕРІ
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -34,7 +34,7 @@ Matrix read_file(std::string const& name_file)
 	return m;
 }
 
-//Алгоритм обхода графа в ширину
+//РђР»РіРѕСЂРёС‚Рј РѕР±С…РѕРґР° РіСЂР°С„Р° РІ С€РёСЂРёРЅСѓ
 void bfs(Matrix &m, int startVertex)
 {
 	std::vector<int> q;
@@ -68,11 +68,11 @@ int main()
 	for(;;)
 	{
 		std::system("cls");
-		std::cout << "В графе " << matrix.vertex << " вершин.Введите номер вершины, с которой начнётся обход : "; std::cin >> input_vertex;
+		std::cout << "Р’ РіСЂР°С„Рµ " << matrix.vertex << " РІРµСЂС€РёРЅ.Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРµСЂС€РёРЅС‹, СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РЅС‘С‚СЃСЏ РѕР±С…РѕРґ : "; std::cin >> input_vertex;
 		if (input_vertex > 0 && input_vertex <= matrix.vertex) break;
 	}
 	
-	std::cout << "Порядок обхода вершин: ";
+	std::cout << "РџРѕСЂСЏРґРѕРє РѕР±С…РѕРґР° РІРµСЂС€РёРЅ: ";
 	bfs(matrix, input_vertex);
 	std::cout << std::endl;
 
