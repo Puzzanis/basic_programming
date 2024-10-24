@@ -6,9 +6,9 @@
 
 struct Matrix
 {
-	int vertex{0};
-	std::vector <int> visited;
-	std::vector<std::vector <int>> matrix;
+	int vertex{ 0 };						//количество вершин
+	std::vector <int> visited;				//массив посещенных вершин
+	std::vector<std::vector <int>> matrix;  //матрица смежности
 };
 
 Matrix read_file(std::string const &name_file)
