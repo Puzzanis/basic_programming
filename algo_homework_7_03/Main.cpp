@@ -1,4 +1,4 @@
-﻿﻿#include <fstream> // для файловых потоков
+﻿#include <fstream> // для файловых потоков
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -34,26 +34,36 @@ Matrix read_file(std::string const& name_file)
 	return m;
 }
 
-void dfs(Matrix& m, int vertex) {
+bool dfs(Matrix& m, int vertex, int prev) {
 
-	std::cout << vertex << " ";
 	m.visited[vertex - 1] = 1;
 
 	for (int j = 0; j < m.vertex; j++) {
 		if ((m.matrix[vertex - 1][j] == 1) && (m.visited[j] != 1)) {
-			dfs(m, (j + 1));
+			prev = j + 1;
+			dfs(m, (j + 1), prev);
+		}
+		else if ((m.matrix[vertex - 1][j] == 1) && (m.visited[j] == 1) && (vertex != prev)) {
+			return true;
 		}
 	}
+	return false;
 }
 
 //Алгоритм обхода графа в глубину
-void DFS(Matrix& m) {
-
+std::string ciclic(Matrix& m) {
+	std::string ans{};
 	for (int i = 0; i < m.vertex; i++) {
 		if (m.visited[i] != 1) {
-			dfs(m, (i + 1));
+			if (dfs(m, (i + 1), 0))
+			{
+				ans = "В графе есть цикл!";
+				break;
+			}
+			ans = "В графе нет цикла!";
 		}
 	}
+	return ans;
 }
 
 
@@ -62,10 +72,12 @@ int main()
 	setlocale(LC_ALL, "Russian");
 
 	Matrix matrix;
-	matrix = read_file("input.txt");
+	//matrix = read_file("input.txt");
+	matrix = read_file("input2.txt");
 
-	std::cout << "Порядок обхода вершин: ";
-	DFS(matrix);
+	std::cout << ciclic(matrix);
+	std::cout << std::endl;
+
 
 
 	return EXIT_SUCCESS;
