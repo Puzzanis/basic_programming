@@ -64,16 +64,16 @@ int main()
 	Matrix matrix;
 	matrix = read_file("input.txt");
 
-	int input_vertex;
+	int start_vertex;
 	for(;;)
 	{
 		std::system("cls");
-		std::cout << "В графе " << matrix.vertex << " вершин.Введите номер вершины, с которой начнётся обход : "; std::cin >> input_vertex;
-		if (input_vertex > 0 && input_vertex <= matrix.vertex) break;
+		std::cout << "В графе " << matrix.vertex << " вершин.Введите номер вершины, с которой начнётся обход : "; std::cin >> start_vertex;
+		if (start_vertex > 0 && start_vertex <= matrix.vertex) break;
 	}
 	
 	std::cout << "Порядок обхода вершин: ";
-	bfs(matrix, input_vertex);
+	bfs(matrix, start_vertex);
 	std::cout << std::endl;
 
 
