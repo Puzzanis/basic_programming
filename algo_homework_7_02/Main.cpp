@@ -35,7 +35,7 @@ Matrix read_file(std::string const& name_file)
 }
 
 //Алгоритм обхода графа в ширину
-void bfs(Matrix &m, int startVertex)
+void BFS(Matrix &m, int startVertex)
 {
 	std::vector<int> q;
 	m.visited[startVertex-1] = 1;
@@ -73,7 +73,7 @@ int main()
 	}
 	
 	std::cout << "Порядок обхода вершин: ";
-	bfs(matrix, start_vertex);
+	BFS(matrix, start_vertex);
 	std::cout << std::endl;
 
 
