@@ -1,15 +1,15 @@
 ﻿#include <string>﻿
 #include <fstream>
 #include <iostream>
-#include <sstream>
 
+#include <sstream>
 #include <vector>
 
 struct Matrix
 {
 	int vertex{ 0 };						//количество вершин
 	std::vector <int> visited;				//массив посещенных вершин
-	std::vector <int> stack;				//массив 
+	std::vector <int> stack;				//результат обхода 
 	std::vector<std::vector <int>> matrix;  //матрица смежности
 };
 
@@ -23,7 +23,7 @@ Matrix read_file(std::string const& name_file)
 	{
 		std::vector<int> temp;
 		std::istringstream str(line);
-		if (line.length() < 4) { str >> m.vertex; m.visited.resize(m.vertex); m.stack.resize(m.vertex); continue; }
+		if (line.length() < 4) { str >> m.vertex; m.visited.resize(m.vertex);  continue; }
 
 		int n;
 		while (str >> n)
@@ -38,7 +38,6 @@ Matrix read_file(std::string const& name_file)
 
 void dfs(Matrix& m, int vertex) {
 
-	std::cout << vertex << " ";
 	m.visited[vertex - 1] = 1;
 
 	for (int j = 0; j < m.vertex; j++) {
@@ -46,6 +45,7 @@ void dfs(Matrix& m, int vertex) {
 			dfs(m, (j + 1));
 		}
 	}
+	m.stack.push_back(vertex);
 }
 
 //Алгоритм обхода графа в глубину
@@ -58,18 +58,23 @@ void DFS(Matrix& m) {
 	}
 }
 
-
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
 	Matrix matrix;
-	//matrix = read_file("input.txt");
-	matrix = read_file("input2.txt");
+	matrix = read_file("input.txt");
+	//matrix = read_file("input2.txt");
 
-	std::cout << "Порядок обхода вершин: ";
+	std::cout << "Топологический порядок вершин: ";
 	DFS(matrix);
 
+
+	while (matrix.stack.empty() == false) {
+		std::cout << matrix.stack.back() << " ";
+		matrix.stack.pop_back();
+	}
+	std::cout << std::endl;
 
 	return EXIT_SUCCESS;
 }
