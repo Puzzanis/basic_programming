@@ -1,7 +1,8 @@
 ﻿#include "Smart_array.h"
 
 
-Smart_array::Smart_array(int size) : size_{ size }, buffer{ new int[size] } {};
+Smart_array::Smart_array(int size) : 
+	size_{ size }, buffer{ new int[size] } {};
 
 Smart_array::Smart_array(const Smart_array& obj):Smart_array{ obj.size_ }
 {
