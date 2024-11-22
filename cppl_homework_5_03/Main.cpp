@@ -1,11 +1,14 @@
-﻿#include <iostream>
-#include "Divided_by_3.h"
+﻿#include<algorithm>
+#include <iostream>
+#include <vector>
+#include "Counter.h"
 
 int main()
 {
-	Divided_by_3 Array({ 3, 4, 6, 8, 9, 12, 16, 21 });
-	Array();
-	Array.get_sum();
-	Array.get_count();
+	std::vector<int> numbers = { 4, 1, 3, 6, 25, 54 };
+	Counter counter = std::for_each(numbers.begin(), numbers.end(), Counter());
+	std::cout << "[OUT]: get_sum() = " << counter.get_sum() << std::endl;
+	std::cout << "[OUT]: get_count() = " << counter.get_count() << std::endl;
+
 	return 0;
 }
