@@ -6,7 +6,7 @@
 template<class T>
 void printVec(const T& mass)
 {
-	for (auto it = mass.begin(); it != mass.end(); it++)
+	for (auto it = mass.cbegin(); it != mass.cend(); it++)
 	{
 		std::cout << *it << '\t';
 	}
