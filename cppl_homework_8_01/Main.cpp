@@ -4,11 +4,11 @@
 #include <vector>
 
 template<class T>
-void printVec(T& mass)
+void printVec(const T& mass)
 {
-	for (const auto& elem : mass)
+	for (auto it = mass.begin(); it != mass.end(); it++)
 	{
-		std::cout << elem << '\t';
+		std::cout << *it << '\t';
 	}
 	std::cout << std::endl;
 }
