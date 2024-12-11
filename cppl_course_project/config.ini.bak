@@ -1,0 +1,52 @@
+﻿[general]
+pvss_path = "C:/Siemens/Automation/WinCC_OA/3.17"						; путь к словарям, включая статические файлы WinCC OA, такие как исполняемые файлы, тексты сообщений об ошибках, значки и т. д.
+proj_path = "D:/WinCC_OA_Proj/ScadCC/Libs_Alarms/scadAES"				; путь к словарю, включая динамические файлы (файлы проекта, такие как базы данных).
+proj_path = "D:/WinCC_OA_Proj/ScadCC/Libs_MPSA/scadDIAG"
+proj_path = "D:/WinCC_OA_Proj/ScadCC/Projects/MPSA"
+
+proj_version = "3.17"													; версия WinCC OA
+langs = "ru_RU.utf8"													; языки проекта
+
+useNGA = 1
+
+distributed = 1
+dataPort = 5011															; Номер порта менеджера данных
+eventPort = 5021														; Номер порта менеджера событий.
+pmonPort = 5031
+
+independentAlertAck = 1
+valueChangeTimeDiff = 10
+
+[dist]
+distPort = 1501
+distPeer = "localhost:1502"2
+[event]
+maxAlertConnectCount = 1000000000
+maxValueConnectCount = 1000000000
+negativeSourceTimeDiff = 10
+validTimeDiff = 5256000
+
+#maxDpNamesCount = 0
+[data]
+#maxValueRequestCount =0
+#maxLinesInQuery = 1000000000
+#maxRequestLineCount=0
+#maxDpNamesCount = 0
+#maxAlertRequestCount =0
+
+[ui]
+aesExtendedFilter = 1
+LoadAllCtrlLibs = 1
+
+#childSystemMenu = 0
+#childTitleBar = 0
+#visionScreenMode = "noTitleBar"
+
+[opcuasrv]
+enableAnonymous = 1
+disableSecurity = 1
+
+[mod]
+maxQueueSize = 10000
+maxGap = 100
+#maxPendingRequests = 2
