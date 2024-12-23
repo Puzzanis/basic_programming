@@ -1,0 +1,46 @@
+CREATE TABLE genres (
+    genre_id SERIAL PRIMARY KEY,
+    genre_name VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE artists (
+    artist_id SERIAL PRIMARY KEY,
+    artist_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE albums (
+    album_id SERIAL PRIMARY KEY,
+    album_title VARCHAR(255) NOT NULL,
+    release_year SMALLINT
+);
+
+CREATE TABLE tracks (
+    track_id SERIAL PRIMARY KEY,
+    track_title VARCHAR(255) NOT NULL,
+    duration INTERVAL,
+    album_id INTEGER REFERENCES albums(album_id)
+);
+
+CREATE TABLE compilations (
+    compilation_id SERIAL PRIMARY KEY,
+    compilation_title VARCHAR(255) NOT NULL,
+    release_year SMALLINT
+);
+
+CREATE TABLE artist_genres (
+    artist_genre_id SERIAL PRIMARY KEY,
+    artist_id INTEGER REFERENCES artists(artist_id),
+    genre_id INTEGER REFERENCES genres(genre_id)
+);
+
+CREATE TABLE artist_albums (
+    artist_album_id SERIAL PRIMARY KEY,
+    artist_id INTEGER REFERENCES artists(artist_id),
+    album_id INTEGER REFERENCES albums(album_id)
+);
+
+CREATE TABLE compilation_tracks (
+    compilation_track_id SERIAL PRIMARY KEY,
+    compilation_id INTEGER REFERENCES compilations(compilation_id),
+    track_id INTEGER REFERENCES tracks(track_id)
+);
