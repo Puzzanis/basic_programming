@@ -50,4 +50,5 @@ public:
 	void addUser(User& u);
 	void updateUser(std::string whatToUpdate, User& u);
 	void deleteUser(User& u);
+	void findUser(User& u);
 };
