@@ -1,4 +1,5 @@
 #pragma once
+#include <cassert>
 #include <exception>
 #include <iostream>
 #include <string>
@@ -10,7 +11,8 @@ enum class Column
 	firstName,
 	lastName,
 	email,
-	phone
+	phone,
+	others
 };
 
 struct User

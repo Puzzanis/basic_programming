@@ -1,4 +1,4 @@
-#include "./include/database.h"
+#include "database.h"
 
 Database::Database(const std::string& userName, const std::string& pwd, const std::string& dbName, const std::string& host, const int& port)
 {
@@ -14,7 +14,7 @@ Database::Database(const std::string& userName, const std::string& pwd, const st
 		tx = new pqxx::work(*conn);
 
 		conn->prepare("create_table",		"CREATE TABLE IF NOT EXISTS public.user (id serial PRIMARY KEY, firstname VARCHAR(255), lastname VARCHAR(255), email VARCHAR(255), phone VARCHAR(255));");
-		conn->prepare("add_user",			"INSERT INTO public.user(firstname, lastname, email, phone) VALUES ($1, $2, $3, $4);");
+		conn->prepare("add_user",			"INSERT INTO public.user (firstname, lastname, email, phone) VALUES ($1, $2, $3, $4);");
 		conn->prepare("update_phone",		"UPDATE public.user SET phone=$1 WHERE public.user.firstname=$2 and public.user.lastname=$3;");
 		conn->prepare("update_firstName",	"UPDATE public.user SET firstname=$1 WHERE public.user.lastname=$2 AND public.user.email=$3;");
 		conn->prepare("update_lastName",	"UPDATE public.user SET lastname=$1 WHERE public.user.firstname=$2 AND public.user.email=$3;;");
@@ -72,6 +72,7 @@ void Database::findUser(User& u)
 void Database::updateUser(std::string whatToUpdate, User& u)
 {
 	Column value = stringToEnum(whatToUpdate);
+
 	switch (value)
 	{
 		case Column::firstName:
@@ -87,6 +88,7 @@ void Database::updateUser(std::string whatToUpdate, User& u)
 			tx->exec_prepared("update_phone", u.phone, u.firstName, u.lastName);
 			break;
 		default:
+			assert(false);
 			break;
 	}
 	tx->commit();
@@ -107,7 +109,8 @@ Column Database::stringToEnum(const std::string& str)
 		return Column::phone;
 	}
 	else {
-		
+		//assert(false);
+		throw std::invalid_argument("invalid argument '" + str + "' when calling function updateUser()!");
 	}
 }
 

@@ -6,7 +6,7 @@ Database* Database::instance = nullptr;
 
 int main()
 {
-	setlocale(0, "utf-8");  //setting the language standard
+	setlocale(0, "");  //setting the language standard
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
@@ -17,31 +17,38 @@ int main()
 	//создание таблицы 'user'
 	db.CreateTable();
 	//добавление записей в таблицу
-	//db.addUser(*user1);
+	db.addUser(*user1);
 	//db.addUser(*user2);
 	//db.addUser(*user3);
 
 	
+	try
+	{
+		//обновление записей в таблице
+		user1->phone = "+7(934) 765-78-77";
+		//user1->phone = "NULL";
+		db.updateUser("phone1", *user1);
 
-	//обновление записей в таблице
-	user1->phone = "+7(934) 765-78-77";
-	//user1->phone = "NULL";
-	db.updateUser("phone", *user1);
+		user1->firstName = "Eduard";
+		db.updateUser("firstName", *user1);
 
-	user1->firstName = "Eduard";
-	db.updateUser("firstName", *user1);
+		user1->lastName = "Surokov";
+		db.updateUser("lastName", *user1);
 
-	user1->lastName = "Surokov";
-	db.updateUser("lastName", *user1);
+		user1->email = "Surokov@email.com";
+		db.updateUser("email", *user1);
 
-	user1->email = "Surokov@email.com";
-	db.updateUser("email", *user1);
+		//поиск в таблице
+		db.findUser(*user1);
 
-	//поиск в таблице
-	db.findUser(*user1);
-
-	//удаление записей из таблицы
-	//db.deleteUser(*user1);
+		//удаление записей из таблицы
+		db.deleteUser(*user1);
+	}
+	catch (std::invalid_argument& e)
+	{
+		std::cout << e.what() << std::endl;
+		return -1;
+	}
 
 	delete user1;
 	delete user2;

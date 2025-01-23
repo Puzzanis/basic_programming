@@ -11,7 +11,7 @@ endif()
 
 project ("sqlcpp_homework_5_01")
 
-file(GLOB src "include/*.h" "./*.cpp")
+file(GLOB src "include/*.h" "include/*.cpp" "./*.cpp")
 
 
 # Добавьте источник в исполняемый файл этого проекта.
