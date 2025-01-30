@@ -3,29 +3,17 @@
 #include <Wt/Dbo/Dbo.h>
 #include <Wt/Dbo/backend/Postgres.h>
 #include <Windows.h>
+#include <WinUser.h>
 
 #include "classesDB.h"
 
-class User {
-public:
-    std::string name = "";
-    std::string phone = "";
-    int karma = 0;
-
-    template<class Action>
-    void persist(Action& a)
-    {
-        Wt::Dbo::field(a, name, "name");
-        Wt::Dbo::field(a, phone, "phone");
-        Wt::Dbo::field(a, karma, "karma");
-    }
-};
+#pragma execution_character_set("utf-8");
 
 int main()
 {
-    setlocale(0, ""); // костыль для русского языка в консоли
-    SetConsoleCP(65001); // два костыля для перевода exception'ов от библиотеки
-    SetConsoleOutputCP(65001);
+    setlocale(LC_ALL, "");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
     try
     {
@@ -39,10 +27,16 @@ int main()
         auto postgres = std::make_unique<Wt::Dbo::backend::Postgres>(connectionString);
         Wt::Dbo::Session session;
         session.setConnection(std::move(postgres));
-        session.mapClass<User>("user");
+
+        session.mapClass<Publisher>("publisher");
+        session.mapClass<Book>("book");
+        session.mapClass<Shop>("shop");
+        session.mapClass<Stock>("stock");
+        session.mapClass<Sale>("sale");
+
         session.createTables();
     }
-    catch (const Wt::Dbo::Exception& ex)
+    catch (const std::exception& ex)
     {
         std::cout << ex.what() << std::endl;
     }
