@@ -41,74 +41,30 @@ public:
 
 	std::string getStringValue(const std::string& input);
 
-	template<class T>
-	T getValue(const std::string& section)
-	{
-		return getStringValue(section);
-	}
-	template<>
-	int getValue(const std::string& section)
-	{
-		std::string res = getStringValue(section);
+	template<typename T>
+	T getValue(const std::string& section) {
+		T result{};
 
-		if (res.find(",") != static_cast<size_t>(-1))
-		{
-			std::cout << "Warning. Тип этого значения double или float преобразуется в int" << std::endl;
-		}
-		try
-		{
-			iValue = std::stoi(res);
-		}
-		catch (const std::out_of_range& ex)
-		{
-			throw ex;
-		}
-		catch (const std::invalid_argument& ex)
-		{
-			throw ex;
-		}
-		return iValue;
+		std::string string_value = getStringValue(section);
 
-	}
-
-	template<>
-	double getValue(const std::string& section)
-	{
-		std::string res = getStringValue(section);
-		try
-		{
-			dValue = std::stod(res);
+		if constexpr (std::is_same<int, T>::value) {
+			result = std::stoi(string_value);
 		}
-		catch (const std::out_of_range& ex)
-		{
-			throw ex;
+		else if constexpr (std::is_same<double, T>::value) {
+			result = std::stod(string_value);
 		}
-		catch (const std::invalid_argument& ex)
-		{
-			throw ex;
+		else if constexpr (std::is_same<std::string, T>::value) {
+			result = string_value;
 		}
-		return dValue;
-
-	}
-
-	template<>
-	float getValue(const std::string& section)
-	{
-		std::string res = getStringValue(section);
-		try
-		{
-			fValue = std::stof(res);
+		else if constexpr (std::is_same<float, T>::value) {
+			result = std::stof(string_value);
 		}
-		catch (const std::out_of_range& ex)
+		else
 		{
-			throw ex;
+			static_assert(sizeof(T) == -1, "no implementation for this type!");
 		}
-		catch (const std::invalid_argument& ex)
-		{
-			throw ex;
-		}
-		return fValue;
-
+		//возвращаем результат
+		return result;
 	}
 
 };

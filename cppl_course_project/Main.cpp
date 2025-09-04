@@ -5,10 +5,10 @@ int main()
 {
 	setlocale(LC_ALL, "RU");
 
+	Parser parser("config.ini");
 	try
 	{
-		Parser parser("config.ini");
-		auto value = parser.getValue<int>("general.distributed");
+		auto value = parser.getValue<int>("general.distributede");
 		std::cout << "value	= " << value << std::endl;
 
 		auto value1 = parser.getValue<std::string>("general.pvss_path");
