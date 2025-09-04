@@ -19,6 +19,28 @@ std::ifstream* ReadStream::getFile()
 	return &f;
 }
 
+std::string Parser::errorHandling(const std::string& val)
+{
+	try
+	{
+		return getStringValue(val);
+	}
+	catch (const std::runtime_error& ex)
+	{
+		std::cout << "Ошибка при чтении файла. " << ex.what() << std::endl;
+	}
+	catch (const std::out_of_range& ex)
+	{
+		std::cout << "Строка не может быть преобразована в число. " << ex.what() << std::endl;
+	}
+	catch (const std::invalid_argument& ex)
+	{
+		std::cout << "Строка не может быть преобразована в число. " << ex.what() << std::endl;
+	}
+
+	return "";
+}
+
 Parser::Parser(const char* filename) :ReadStream(filename)
 {
 	file = getFile();

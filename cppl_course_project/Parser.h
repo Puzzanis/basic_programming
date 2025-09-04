@@ -33,19 +33,25 @@ private:
 	double dValue{ 0.0 };
 	float fValue{ 0.0 };
 	std::map<std::string, std::map<std::string, std::string>> Data_;
+private:
+	std::string errorHandling( const std::string& val);
+	std::string getStringValue(const std::string& input);
+
 public:
 	explicit Parser(const char* filename);
 	std::string removeSpaces(std::string& input) const;
 
 	void printMap(const std::string& currentSection);
 
-	std::string getStringValue(const std::string& input);
-
 	template<typename T>
 	T getValue(const std::string& section) {
 		T result{};
 
-		std::string string_value = getStringValue(section);
+		std::string string_value = errorHandling(section);
+		if (string_value.size() == 0)
+		{
+			_Exit(EXIT_FAILURE);
+		}
 
 		if constexpr (std::is_same<int, T>::value) {
 			result = std::stoi(string_value);
